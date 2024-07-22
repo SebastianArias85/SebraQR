@@ -1,0 +1,115 @@
+.codqr{
+    width: 50%;
+}
+
+
+.eqcard{
+    width: 80%; 
+}
+
+.formpc{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.btn-search{
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.search{
+    width: 70px;
+    height:80px;  
+}
+
+.escudo{
+    padding-left: 50px;
+}
+
+.addpc{
+    border-radius: 50%;
+}
+
+.escudoChikito{
+    width: auto;
+    height: 80px;
+}
+
+.formCh{
+    font-weight:700 !important;
+    color: rgb(12, 1, 1);
+}
+
+
+
+@media (max-width: 1300px) {
+    .tablaDatosGrande{
+     display: none;
+    }
+ }
+
+ @media (min-width: 1300px) {
+    .tablaDatosChico{
+     display: none;
+    }
+ }
+
+@media (min-width: 1100px) {
+   .chico{
+    display: none;
+   }
+}
+
+@media (max-width: 1100px) {
+    .grande{
+     display: none;
+    }
+ }
+
+ @media (min-width: 767px) {
+    .navChico{
+        display: none;
+    }
+ }
+
+ @media (max-width: 767px) {
+    .navGrande{
+        display: none;
+    }
+ }
+
+
+@media (max-width: 767px) {
+
+    .codqr{
+        width: 80%;
+    }
+
+    .escudoChikito{
+        width: auto;
+        height: 50px;
+    }
+
+    .footTit{
+        padding-bottom:10px;
+        text-align: center;
+    }
+
+    .linkFoot{
+        display: none;
+    }
+
+    .userName{
+        display: none;
+    }
+    
+  }
+
+  @media (max-width: 381px) {
+    .footTit{
+        padding-bottom:10px;
+        text-align: center;
+        font-size: 15px;
+    }
+  }
