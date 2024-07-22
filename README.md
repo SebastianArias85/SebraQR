@@ -37,3 +37,8 @@ Datos de donde se descargo NATIVEFIER
   https://github.com/nativefier/nativefier
 ```
 
+Redactor de README online:
+
+```bash
+https://readme.so/es/editor
+```
