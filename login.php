@@ -43,7 +43,7 @@
     <div class="chico">
         <div class="row">
             <div class="col-12">
-                <img class="escudo mx-auto" src="img/SISPE.png" alt="ESCUDO" style="width:80%">
+                <img class="escudo mx-auto" src="assets/img/SISPE.png" alt="ESCUDO" style="width:80%">
             </div>
         </div>
 

@@ -21,33 +21,39 @@ $usuario = $_SESSION['usuario'];
 
 <body>
 
+    <!--BARRA DE NAVEGACION-->
+    <?php
+    include '../navbar.php';
+    ?>
+    <!--BARRA DE NAVEGACION-->
+
     <!--BUSQUEDA-->
     <?php
-// Incluir el archivo de conexión
-include '../db/db.php';
+    // Incluir el archivo de conexión
+    include '../db/db.php';
 
-// Obtener el código del QR, sea por POST o GET
-if (isset($_POST['codigo'])) {
-    $codigo = $_POST['codigo'];
-} elseif (isset($_GET['codigo'])) {
-    $codigo = $_GET['codigo'];
-} else {
-    die("Código QR no proporcionado.");
-}
+    // Obtener el código del QR, sea por POST o GET
+    if (isset($_POST['codigo'])) {
+        $codigo = $_POST['codigo'];
+    } elseif (isset($_GET['codigo'])) {
+        $codigo = $_GET['codigo'];
+    } else {
+        die("Código QR no proporcionado.");
+    }
 
-// Consulta para obtener los datos del equipo
-$sql = "SELECT * FROM cpus WHERE id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $codigo);  // Si el ID es alfanumérico, ajusta el tipo de dato aquí
-$stmt->execute();
-$result = $stmt->get_result();
+    // Consulta para obtener los datos del equipo
+    $sql = "SELECT * FROM cpus WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $codigo);  // Si el ID es alfanumérico, ajusta el tipo de dato aquí
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-// Verificar si se encontraron resultados
-if ($result->num_rows > 0) {
-    // Obtener los datos del equipo
-    $row = $result->fetch_assoc();
-    $nombre_equipo = $row['id'];  // Ajusta según la columna correcta que contiene el nombre del equipo
-    $id_equipo = $row['id'];
+    // Verificar si se encontraron resultados
+    if ($result->num_rows > 0) {
+        // Obtener los datos del equipo
+        $row = $result->fetch_assoc();
+        $nombre_equipo = $row['id'];  // Ajusta según la columna correcta que contiene el nombre del equipo
+        $id_equipo = $row['id'];
 
     ?>
 
@@ -64,6 +70,7 @@ if ($result->num_rows > 0) {
     </head>
 
     <!--CARGADOR DE PC GRANDE-->
+
     <body>
         <div class="container mt-5 tablaDatosGrande">
             <h1 class="text-center">Equipo: <?php echo $nombre_equipo; ?> </h1>
@@ -104,7 +111,7 @@ if ($result->num_rows > 0) {
                 <a href="index.php" class="btn btn-secondary">Volver</a>
             </div>
         </div>
-    </body>    
+    </body>
     <!--CARGADOR DE PC GRANDE-->
 
 
@@ -167,22 +174,32 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
                 <a href='modificar.php?id=<?php echo $row["id"]; ?>' class='btn btn-warning mb-3'>Modificar</a>
-            </form>            
+            </form>
         </div>
         <div class="text-center mt-4">
-                <a href="index.php" class="btn btn-secondary">Volver</a>
-            </div>
+            <a href="index.php" class="btn btn-secondary">Volver</a>
+        </div>
     </div>
 
     <?php
-} else {
-    echo "<div class='container mt-5'><div class='alert alert-warning'>No se encontraron resultados.</div></div>";
-}
+    } else {
+        echo "<div class='container mt-5'><div class='alert alert-warning'>No se encontraron resultados.</div></div>";
+    }
 
-$stmt->close();
-$conn->close();
-?>
+    $stmt->close();
+    $conn->close();
+    ?>
     <!--CARGADOR DE PC PC CHICO-->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
+    </script>
 
 </body>
 

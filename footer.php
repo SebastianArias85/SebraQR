@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 
 <body>
@@ -21,8 +21,7 @@
         </a>
 
         <ul class="nav col-md-4 justify-content-end linkFoot">
-            <li class="nav-item"><a href="vistas/index.php" class="nav-link px-2 text-body-secondary">Inicio</a></li>
-            <li class="nav-item"><a href="vistas/cargar.php" class="nav-link px-2 text-body-secondary">Agregar Equipo</a></li>
+            
         </ul>
     </footer>
     <!--FOOTER-->

@@ -41,6 +41,10 @@
     color: rgb(12, 1, 1);
 }
 
+.link-verde {    
+    color: #319b14!important;
+}
+ 
 
 
 @media (max-width: 1300px) {
